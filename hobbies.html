@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event</title>
+    <link rel="stylesheet" href="tine.css">
+</head>
+<body>
+    <header>
+        <h1>Additional Content</h1>
+        <p>Click on the pictures to reveal more about me!</p>
+
+        <!-- Dark Mode Toggle Button -->
+        <div class="dark-mode-toggle">
+            <button class="toggle-btn" id="mode-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="reyes.html" class="back-button">Back to My College Journey</a>
+    </div>
+
+    <main>
+        <section class="gallery">
+            <h2>Photo Highlights</h2>
+            <div class="gallery-container">
+                <!-- Event Picture 1 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="462550021_1126546522395783_3079542250480177868_n.jpg" alt="Event 1">
+                    <div class="description">
+                        <p>Biking: one of my sports to maintain my body shape.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 2 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="466592707_1619232032054969_5282358592721403754_n.jpg" alt="Event 2">
+                    <div class="description">
+                        <p>Output from other subject: This is our game to the fundamental, it is called "pewpew".</p>
+                    </div>
+                </div>
+                <!-- Event Picture 3 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="465490675_1117855746668775_1302538395959852758_n.jpg" alt="Event 3">
+                    <div class="description">
+                        <p>Unwind: if you haven't know, unwinding and nature trip is one of my favorite activities.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 4 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="462553792_1264457964759526_2649656851837846737_n.jpg" alt="Event 4">
+                    <div class="description">
+                        <p>Picture as student: This is my with complete uniform, and all I need to study. I am a good student never been late, never been absent and never been FEU violator.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 My College Journey</p>
+    </footer>
+
+    <script>
+        // Function to toggle dark mode
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            // Toggle dark mode on body element
+            document.body.classList.toggle('dark-mode');
+            // Save the current dark mode state in localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Apply dark mode if it was enabled previously
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Function to reveal descriptions on gallery items click
+        function revealText(item) {
+            const description = item.querySelector('.description');
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

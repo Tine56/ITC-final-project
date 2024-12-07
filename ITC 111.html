@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Homepage</title>
+    <link rel="stylesheet" href="ITC 111.css">
+</head>
+<body>
+    <header>
+        <div class="dark-mode-toggle">
+            <button class="toggle-btn" id="mode-toggle">Toggle Dark Mode</button>
+        </div>
+        <div class="container">
+            <h1>Our Journey as Freshmen College Students of FEU Roosevelt</h1>
+            <nav>
+                <ul>
+                    <li><a href="reyes.html">REYES</a></li>
+                    <li><a href="allunam.html">ALLUNAM</a></li>
+                    <li><a href="lorente.html">LORENTE</a></li>
+                    <li><a href="fredman.html">DE GUZMAN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to FEU ROOSEVELT</h2>
+            <p>This is our journey as a college freshmen</p>
+            <a href="#about" class="btn">click this</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <h2>Justine Reyes</h2>
+            <p>My freshmen year is about adjusting to independence, making friends, and exploring new opportunities while navigating challenges.</p>
+        </div>
+    </section>
+
+    <section id="academics" class="academics">
+        <div class="container">
+            <h2>Ralph Allunam</h2>
+            <p>My freshman year at FEUR was a bit overwhelming at first, but I slowly found comfort in kind classmates, supportive professors, and little moments of belonging.
+</p>
+        </div>
+    </section>
+
+    <section id="admissions" class="admissions">
+        <div class="container">
+            <h2>Justine Lorente</h2>
+            <p>As a freshmen student when entering for the first time to school of course it was nervous because there were no friends and no one I knew, but I learned a lot and my I have a lot of new friends.
+</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Fredman De Guzman</h2>
+            <p>It's exciting to get used to college life, meet other classmates, and participate in active campus events as a student at FEU Roosevelt Marikina.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Far Eastern University Roosevelt. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to toggle dark mode
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            // Toggle dark mode on body element
+            document.body.classList.toggle('dark-mode');
+            // Save the current dark mode state in localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Apply dark mode if it was enabled previously
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+
+
+/* Header */
+header {
+    text-align: center;
+    background: #008000;
+    color: white;
+    padding: 1rem 0;
+    position: relative;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+header .dark-mode-toggle:hover {
+    color: #f0f0f0;
+}
+
+/* Main Content */
+main {
+    padding: 1rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Gallery Styles */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: 200px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Description Popup */
+.description {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    transition: bottom 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.gallery-item.active .description {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Video Section */
+.video-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+video {
+    width: 80%;
+    max-width: 600px;
+    border: 2px solid #0077cc;
+    border-radius: 8px;
+}
+
+/* Back Button */
+.back-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-button {
+    padding: 10px 20px;
+    background-color: #006400;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #008000;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background: #121212;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    background: #008000;
+    color: white;
+    padding: 1rem 0;
+}
+
+.dark-mode header {
+    background: #333;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 1rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: 200px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.dark-mode .gallery-item {
+    background: #333;
+    border-color: #444;
+    color: white;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+}
+
+.description {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    transition: bottom 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dark-mode .description {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+.gallery-item.active .description {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.video-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+video {
+    width: 80%;
+    max-width: 600px;
+    border: 2px solid #0077cc;
+    border-radius: 8px;
+}
+
+.back-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-button {
+    padding: 10px 20px;
+    background-color: #006400;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #008000;
+}
+
+.dark-mode .back-button {
+    background-color: #444;
+}
+
+.dark-mode .back-button:hover {
+    background-color: #666;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    background-color: #808080;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background-color: #008000;
+}

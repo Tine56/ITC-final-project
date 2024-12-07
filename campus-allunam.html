@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event</title>
+    <link rel="stylesheet" href="tine.css">
+</head>
+<body>
+    <header>
+        <h1>Campus Event Highlights</h1>
+        <p>Click on the pictures to reveal more about each event!</p>
+        <!-- Dark Mode Toggle Button -->
+        <div class="dark-mode-toggle">
+            <button class="toggle-btn" id="mode-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="allunam.html" class="back-button">Back to My College Journey</a>
+    </div>
+
+    <main>
+        <section class="gallery">
+            <h2>Photo Highlights</h2>
+            <div class="gallery-container">
+                <!-- Event Picture 1 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="d10edc32-2800-46cc-b6ef-b7d133e418d4.jpg" alt="Event 1">
+                    <div class="description">
+                        <p>The Sinag Tamaraw event was both happy and tiring because of the energetic atmosphere. The bands gave great performances, making it an exciting and memorable experience!</p>
+                    </div>
+                </div>
+                <!-- Event Picture 2 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="a899133b-e739-4636-8ca0-914e2fb2e7de.jpg" alt="Event 2">
+                    <div class="description">
+                        <p>The school Halloween event was so fun, with students wearing a mix of funny and scary costumes that amazed everyone.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 3 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="ba59d392-ce0d-4024-8446-4eba146c4e35.jpg" alt="Event 3">
+                    <div class="description">
+                        <p>The school sports fest was so much fun as I cheered for the players and enjoyed the games. Watching them play made me wish I was out there on the court too!</p>
+                    </div>
+                </div>
+                <!-- Event Picture 4 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="84c1d7a4-7b4e-4362-90f5-26f6f3bd22e0.jpg" alt="Event 4">
+                    <div class="description">
+                        <p>The school Christmas lighting event was so much fun, with amazing dancers who performed beautifully. The colorful lights made the night feel magical and unforgettable!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="video-section">
+            <h2>Life lesson for this journey</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="469431699_8672599332837980_5097634325113450611_n (2).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Watch the best moments of the Campus Event in this video!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 My College Journey</p>
+    </footer>
+
+    <script>
+        // Function to reveal text description on click
+        function revealText(item) {
+            const description = item.querySelector('.description');
+            item.classList.toggle('active');
+        }
+
+        // Dark Mode Toggle Function
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            // Save the dark mode state to localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Check localStorage for dark mode setting on page load
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event</title>
+    <link rel="stylesheet" href="tine.css">
+</head>
+<body>
+    <header>
+        <h1>Campus Event Highlights</h1>
+        <p>Click on the pictures to reveal more about each event!</p>
+        <!-- Dark Mode Toggle Button -->
+        <div class="dark-mode-toggle">
+            <button class="toggle-btn" id="mode-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="lorente.html" class="back-button">Back to My College Journey</a>
+    </div>
+
+    <main>
+        <section class="gallery">
+            <h2>Photo Highlights</h2>
+            <div class="gallery-container">
+                <!-- Event Picture 1 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="467905421_1861204964408317_339063638107058824_n.jpg" alt="Event 1">
+                    <div class="description">
+                        <p>Sinag tams: I am very happy because of this. If I met many people, I feel that they are hard to talk to but they are kind, that's why sometimes many people fail in love because we are discouraged so you don't become the person you want to be, so now I will strengthen my heart when I really meet the one.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 2 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="467135618_3779245405663229_5026822542062828716_n.jpg" alt="Event 2">
+                    <div class="description">
+                        <p>Sinag sports: I enjoyed it because all the participants gave their best for the game and all of that was enjoyable to watch, especially the volleyball girls, the players E, P, H were very solid. They are focused because they are very beautiful, especially in person, they are good at serving "sana sakin din" Just kidding, thank you.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 3 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="462561996_566568896078177_8195562747017263604_n.jpg" alt="Event 3">
+                    <div class="description">
+                        <p> Christmas lightning: I enjoyed it because at the end there were fireworks, I only expected to see her during those days, but I was more excited when the fireworks went off while looking at his beautiful eyes.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 4 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="462641505_581793261454376_4358583330437493524_n.jpg" alt="Event 4">
+                    <div class="description">
+                        <p>Halloween cos-play: one of the days that I'm very happy because I feel like I'm going trick or treating and I'm back to being a kid</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="video-section">
+            <h2>Life lesson for this journey</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="469157779_9290139804330763_246769524030481990_n.mp4" type="video/mp4">
+                    
+                </video>
+                <p>Watch the best moments of the Campus Event in this video!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 My College Journey</p>
+    </footer>
+
+    <script>
+        // Function to reveal text description on click
+        function revealText(item) {
+            const description = item.querySelector('.description');
+            item.classList.toggle('active');
+        }
+
+        // Dark Mode Toggle Function
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            // Save the dark mode state to localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Check localStorage for dark mode setting on page load
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

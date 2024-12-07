@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event</title>
+    <link rel="stylesheet" href="tine.css">
+</head>
+<body>
+    <header>
+        <h1>Additional Content</h1>
+        <p>Click on the pictures to reveal more about me!</p>
+
+        <!-- Dark Mode Toggle Button -->
+        <div class="dark-mode-toggle">
+            <button class="toggle-btn" id="mode-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="fredman.html" class="back-button">Back to My College Journey</a>
+    </div>
+
+    <main>
+        <section class="gallery">
+            <h2>Photo Highlights</h2>
+            <div class="gallery-container">
+                <!-- Event Picture 1 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="ef3fe49b-894d-4556-a079-a9195eef5810.jpg" alt="Event 1">
+                    <div class="description">
+                        <p>Sports: Playing Basketball Is a great way to challenge myself, stay active, and build friendships while enjoying the excitement of the game.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 2 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="67d18090-edb1-4814-8e31-a13fd5eee8d2.jpg" alt="Event 2">
+                    <div class="description">
+                        <p>Activities as student: In this image we're doing sheep made in plastic bottles for our NSTP subject.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 3 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="1523d2e2-2de2-4bde-bc05-5c3d60bc4fc3.jpg" alt="Event 3">
+                    <div class="description">
+                        <p>First expirience of college: Well at first its so hard to socialize but when time goes by I did find some new friends.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 4 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="d8d72ff0-1549-4c7f-af28-f91572ca7bb1.jpg" alt="Event 4">
+                    <div class="description">
+                        <p>Output from other subject: In this picuture you can see our work in Fundamentals Of Programming.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 My College Journey</p>
+    </footer>
+
+    <script>
+        // Function to toggle dark mode
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            // Toggle dark mode on body element
+            document.body.classList.toggle('dark-mode');
+            // Save the current dark mode state in localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Apply dark mode if it was enabled previously
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Function to reveal descriptions on gallery items click
+        function revealText(item) {
+            const description = item.querySelector('.description');
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

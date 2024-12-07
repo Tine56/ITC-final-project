@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My College Journey</title>
+    <link rel="stylesheet" href="tine.css">
+</head>
+<body>
+    <header>
+        <h1>My College Journey</h1>
+        <p>Click on a photo to reveal its story!</p>
+        <!-- Dark Mode Toggle Button -->
+        <div class="dark-mode-toggle">
+            <button class="toggle-btn" id="mode-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <div class="back-button-container">
+        <a href="ITC 111.html" class="back-button">Back to the main page</a>
+    </div>
+
+    <main>
+        <section class="gallery">
+            <h2>Journey Highlights</h2>
+            <div class="gallery-container">
+                <!-- First Day -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="74f8aaae-04e7-41ba-a6d5-409a3a1afcab.jpg" alt="First Day of College">
+                    <div class="description">
+                        <p>This is my first day at our school. That time im so nervous because i need to get to used in new environment.</p>
+                    </div>
+                </div>
+                <!-- Group Study -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="410323f6-fc09-44db-b34f-e342c1b91e10.jpg" alt="Group Study">
+                    <div class="description">
+                        <p>this is my friends that I meet in FEURM</p>
+                    </div>
+                </div>
+                <!-- Campus Event -->
+                <div class="gallery-item" onclick="goToCampusEvent(this)">
+                    <img src="6b742ccb-3331-4466-a7a6-5df3eedb6f2c.jpg" alt="Campus Event">
+                    <div class="description">
+                    </div>
+                </div>
+                <!-- Graduation -->
+                <div class="gallery-item" onclick="goTohobbies()">
+                    <img src="af81a2dd-9593-4933-a85c-897a069a8ecf.jpg" alt="hoobies">
+                    <div class="description">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 My College Journey</p>
+    </footer>
+
+    <script>
+        // Function to toggle dark mode
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            // Toggle dark mode on body element
+            document.body.classList.toggle('dark-mode');
+            // Save the current dark mode state in localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Apply dark mode if it was enabled previously
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        function goToCampusEvent() {
+            window.location.href = "campus-fredman.html";
+        }
+
+        function goTohobbies() {
+            window.location.href = "hobbies-fredman.html";
+        }
+
+        function revealText(item) {
+            const description = item.querySelector('.description');
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

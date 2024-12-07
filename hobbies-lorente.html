@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event</title>
+    <link rel="stylesheet" href="tine.css">
+</head>
+<body>
+    <header>
+        <h1>Additional Content</h1>
+        <p>Click on the pictures to reveal more about me!</p>
+
+        <!-- Dark Mode Toggle Button -->
+        <div class="dark-mode-toggle">
+            <button class="toggle-btn" id="mode-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="lorente.html" class="back-button">Back to My College Journey</a>
+    </div>
+
+    <main>
+        <section class="gallery">
+            <h2>Photo Highlights</h2>
+            <div class="gallery-container">
+                <!-- Event Picture 1 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="467169602_493763219734123_7094415068223660180_n.jpg" alt="Event 1">
+                    <div class="description">
+                        <p>Challenge you are facing in your college journey: as a working student it's not easy for me because of course all at the same time I'm not a rock so I don't feel and don't get soft on things but as long as I can I will continue with all the challenges I know all my struggle will have results</p>
+                    </div>
+                </div>
+                <!-- Event Picture 2 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="462563985_1322897142217964_4107225947944119804_n.jpg" alt="Event 2">
+                    <div class="description">
+                        <p>Your first week in college: and for my firt week of college of course it's nervous because I just returned from school because I stopped studying for 1 year but I'm proud because I made a lot of friends and little by little I learned a lot in college and this is it the real struggle in college</p>
+                    </div>
+                </div>
+                <!-- Event Picture 3 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="465873055_1988116588298025_4918717572089399091_n.jpg" alt="Event 3">
+                    <div class="description">
+                        <p>my sample output: this is one of my examples of making sheep in NSTP, and our game for fundamentals.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 4 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="465419912_1091442295979280_8507425703851476069_n.jpg" alt="Event 4">
+                    <div class="description">
+                        <p>Getting to know behind the web page: and for my webpage I had a hard time because I didn't know much about codes when I came to college because my strand was not compatible with programming but I studied and I was able to create a basic webpage and I'm proud of that</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 My College Journey</p>
+    </footer>
+
+    <script>
+        // Function to toggle dark mode
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            // Toggle dark mode on body element
+            document.body.classList.toggle('dark-mode');
+            // Save the current dark mode state in localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Apply dark mode if it was enabled previously
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Function to reveal descriptions on gallery items click
+        function revealText(item) {
+            const description = item.querySelector('.description');
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

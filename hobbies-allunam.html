@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event</title>
+    <link rel="stylesheet" href="tine.css">
+</head>
+<body>
+    <header>
+        <h1>Additional Content</h1>
+        <p>Click on the pictures to reveal more about me!</p>
+
+        <!-- Dark Mode Toggle Button -->
+        <div class="dark-mode-toggle">
+            <button class="toggle-btn" id="mode-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="allunam.html" class="back-button">Back to My College Journey</a>
+    </div>
+
+    <main>
+        <section class="gallery">
+            <h2>Photo Highlights</h2>
+            <div class="gallery-container">
+                <!-- Event Picture 1 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="69201bdf-df6e-4c8e-b6ba-13dcc1d99de9 (1).jpg" alt="Event 1">
+                    <div class="description">
+                        <p>My first class as a college student was challenging, as transitioning to college life felt overwhelming. However, it was a new beginning that pushed me to adapt and grow.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 2 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="14b1f1ec-e63a-4501-a999-a38569ec861c.jpg" alt="Event 2">
+                    <div class="description">
+                        <p>Creating a school activity/project was hard but also exciting. It was fun exploring new things and learning throughout the process!</p>
+                    </div>
+                </div>
+                <!-- Event Picture 3 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="b163bbc1-843e-46c0-a2ad-5ea4db6d9db3.jpg" alt="Event 3">
+                    <div class="description">
+                        <p>Playing basketball while doing my activities has been an exciting and rewarding experience. It’s both challenging and fun, pushing me to improve while enjoying the game I love!</p>
+                    </div>
+                </div>
+                <!-- Event Picture 4 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="25c1ea69-4e49-4283-bbad-dc1661e4818c.jpg" alt="Event 4">
+                    <div class="description">
+                        <p>My overall experience in college at FEU is both fulfilling and calming. I often find myself looking out the window, appreciating how peaceful it feels to study here.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 My College Journey</p>
+    </footer>
+
+    <script>
+        // Function to toggle dark mode
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            // Toggle dark mode on body element
+            document.body.classList.toggle('dark-mode');
+            // Save the current dark mode state in localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Apply dark mode if it was enabled previously
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Function to reveal descriptions on gallery items click
+        function revealText(item) {
+            const description = item.querySelector('.description');
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

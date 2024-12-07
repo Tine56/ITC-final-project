@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My College Journey</title>
+    <link rel="stylesheet" href="tine.css">
+</head>
+<body>
+    <header>
+        <h1>My College Journey</h1>
+        <p>Click on a photo to reveal its story!</p>
+        <!-- Dark Mode Toggle Button -->
+        <div class="dark-mode-toggle">
+            <button class="toggle-btn" id="mode-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <div class="back-button-container">
+        <a href="ITC 111.html" class="back-button">Back to the main page</a>
+    </div>
+
+    <main>
+        <section class="gallery">
+            <h2>Journey Highlights</h2>
+            <div class="gallery-container">
+                <!-- First Day -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="465613665_591599376704399_7886890885574949113_n.jpg" alt="First Day of College">
+                    <div class="description">
+                        <p>1st day of school, of course these are the days to introduce yourself, of course we'll be nice, but they've been really nice so far, so this is all I want to share about my 1st day.</p>
+                    </div>
+                </div>
+                <!-- Group Study -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="462539953_1289264742109762_5268498566058043291_n.jpg" alt="Group Study">
+                    <div class="description">
+                        <p>those are my friends that I met at school, of course they are also the friends that you can easily approach in conversation, but we are kind people when we really have fun, often.
+</p>
+                    </div>
+                </div>
+                <!-- Campus Event -->
+                <div class="gallery-item" onclick="goToCampusEvent(this)">
+                    <img src="462551316_1213018989764283_8395282416747640762_n.jpg" alt="Campus Event">
+                    <div class="description">
+                        
+                    </div>
+                </div>
+                <!-- Graduation -->
+                <div class="gallery-item" onclick="goTohobbies()">
+                    <img src="462563710_1253334732600617_7389096062019108856_n.jpg" alt="hoobies">
+                    <div class="description">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 My College Journey</p>
+    </footer>
+
+    <script>
+        // Function to toggle dark mode
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            // Toggle dark mode on body element
+            document.body.classList.toggle('dark-mode');
+            // Save the current dark mode state in localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Apply dark mode if it was enabled previously
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        function goToCampusEvent() {
+            window.location.href = "campus-lorente.html";
+        }
+
+        function goTohobbies() {
+            window.location.href = "hobbies-lorente.html";
+        }
+
+        function revealText(item) {
+            const description = item.querySelector('.description');
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

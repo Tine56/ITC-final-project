@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event</title>
+    <link rel="stylesheet" href="tine.css">
+</head>
+<body>
+    <header>
+        <h1>Campus Event Highlights</h1>
+        <p>Click on the pictures to reveal more about each event!</p>
+        <!-- Dark Mode Toggle Button -->
+        <div class="dark-mode-toggle">
+            <button class="toggle-btn" id="mode-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <div class="back-button-container">
+        <a href="fredman.html" class="back-button">Back to My College Journey</a>
+    </div>
+
+    <main>
+        <section class="gallery">
+            <h2>Photo Highlights</h2>
+            <div class="gallery-container">
+                <!-- Event Picture 1 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="412eac4a-5909-415a-8744-a75cba4673dd.jpg" alt="Event 1">
+                    <div class="description">
+                        <p>this is the event in cainta Sinag tams. its so much fun because of the event and concert.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 2 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="2a8faa77-cc7f-4f52-8321-3a0fa92b6e0e.jpg" alt="Event 2">
+                    <div class="description">
+                        <p>The school Halloween event was so fun, with students wearing a mix of funny and scary costumes that amazed everyone.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 3 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="86a318e3-86f0-47a8-ae7d-cadc5be3561c.jpg" alt="Event 3">
+                    <div class="description">
+                        <p>in this picture we're celebrating christmas lightning at FEU ROOSEVELT MARIKINA.</p>
+                    </div>
+                </div>
+                <!-- Event Picture 4 -->
+                <div class="gallery-item" onclick="revealText(this)">
+                    <img src="84c1d7a4-7b4e-4362-90f5-26f6f3bd22e0.jpg" alt="Event 4">
+                    <div class="description">
+                        <p>The school Christmas lighting event was so much fun, with amazing dancers who performed beautifully. The colorful lights made the night feel magical and unforgettable!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="video-section">
+            <h2>Life lesson for this journey</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="01f19c54-11c2-4f6a-8157-9a42f810a58d.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Watch the best moments of the Campus Event in this video!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 My College Journey</p>
+    </footer>
+
+    <script>
+        // Function to reveal text description on click
+        function revealText(item) {
+            const description = item.querySelector('.description');
+            item.classList.toggle('active');
+        }
+
+        // Dark Mode Toggle Function
+        const toggleButton = document.getElementById('mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            // Save the dark mode state to localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Check localStorage for dark mode setting on page load
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>
